@@ -1,0 +1,26 @@
+#\DeclareLyXModule{Bolpat's Simplified Theorems}
+#DescriptionBegin
+#Defines theorem environments and the proof environment using the extended 
+#AMS machinery. 
+#The theorems are numbered consecutively throughout the document. This can 
+#be changed by loading one of the 'Theorems (Numbered by ...)' modules.
+#Only one of the counted and non-counted version is available.
+#DescriptionEnd
+#Excludes: theorems-ams-bolpat | theorems-ams | theorems-std | theorems-starred
+#Category: theorems
+
+# Original Author : David L. Johnson <dlj0@lehigh.edu>
+# Probably broken by Jean-Marc Lasgouttes <Jean-Marc.Lasgouttes@inria.fr>
+# modified and modularized by Emmanuel GUREGHIAN <gureghia@boston.bertin.fr>
+# Tinkered with Sep. '07 by Paul Rubin <rubin@msu.edu>
+# Modularized Jan 08 by Richard Heck <rgheck@comcast.net>
+# Made by Quirin F. Schroll aka. Bolpat <quirin.schroll@campus.lmu.de>
+
+Format 60
+
+Requires	amsmath,amsthm
+
+Counter theorem
+End
+
+Input theorems-ams-bolpat-simp.inc

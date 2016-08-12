@@ -1,0 +1,29 @@
+#\DeclareLyXModule{Bolpat's Theorems (AMS)}
+#DescriptionBegin
+#Defines theorem environments and the proof environment using the extended 
+#AMS machinery. Both numbered and unnumbered types are provided. By default, 
+#the theorems are numbered consecutively throughout the document. This can be
+#changed by loading one of the 'Theorems (Numbered by ...)' modules.
+#The difference to Theorems (AMS) is only a stylisitc one.
+#DescriptionEnd
+#Excludes: theorems-ams | theorems-std | theorems-starred
+#Category: theorems
+
+# Original Author : David L. Johnson <dlj0@lehigh.edu>
+# Probably broken by Jean-Marc Lasgouttes <Jean-Marc.Lasgouttes@inria.fr>
+# modified and modularized by Emmanuel GUREGHIAN <gureghia@boston.bertin.fr>
+# Tinkered with Sep. '07 by Paul Rubin <rubin@msu.edu>
+# Modularized Jan 08 by Richard Heck <rgheck@comcast.net>
+# Made by Quirin F. Schroll aka. Bolpat <quirin.schroll@campus.lmu.de>
+
+Format 60
+
+Requires	amsmath,amsthm
+
+Counter theorem
+End
+
+Input theorems-order-bolpat.inc
+Input theorems-ams-bolpat.inc
+Input theorems-starred-bolpat.inc
+Input theorems-proof-bolpat.inc
