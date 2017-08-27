@@ -1,0 +1,17 @@
+#\DeclareLyXModule{Bracket Corrections}
+#DescriptionBegin
+# Brackets (including parentheses, braces and angles) have a space
+# before and after them when used with \left and \right.
+# This eliminates the space as if no \left and \right commands were used.
+#DescriptionEnd
+#
+#Author: Quirin F. Schroll  aka.  Bolpat
+
+Format 60
+
+AddToPreamble
+    \let\originalleft\left
+    \let\originalright\right
+    \renewcommand{\left}{\mathopen{}\mathclose\bgroup\originalleft}
+    \renewcommand{\right}{\aftergroup\egroup\originalright}
+EndPreamble

@@ -1,0 +1,32 @@
+#\DeclareLyXModule{Extend emphasis to punctation}
+#DescriptionBegin
+# Extends (italic) emphasis to following punctation.
+#DescriptionEnd
+#
+#Author: Quirin F. Schroll  alias  Bolpat
+
+Format 60
+
+AddToPreamble
+    \usepackage{xspace}
+
+    \let\Emph\emph
+
+    \makeatletter
+
+    \def\emph#1{%
+        \@ifnextchar,{\@emph@Comma#1}{%
+        \@ifnextchar.{\@emph@Dot#1}{%
+        \@ifnextchar:{\@emph@Colon#1}{%
+        \@ifnextchar;{\@emph@Semicolon#1}{%
+        \@ifnextchar!{\@emph@Excl#1}{%
+        \@ifnextchar?{\@emph@Quest#1}%
+        {\Emph{#1}\xspace}%
+    }}}}}}
+    \def\@emph@Comma#1,{\Emph{#1,}\xspace}
+    \def\@emph@Dot#1.{\Emph{#1.}\xspace}
+    \def\@emph@Colon#1:{\Emph{#1:}\xspace}
+    \def\@emph@Semicolon#1;{\Emph{#1;}\xspace}
+    \def\@emph@Excl#1!{\Emph{#1!}\xspace}
+    \def\@emph@Quest#1?{\Emph{#1?}\xspace}
+EndPreamble

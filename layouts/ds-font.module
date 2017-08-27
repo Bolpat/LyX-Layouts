@@ -1,0 +1,15 @@
+#\DeclareLyXModule{DS-Font}
+#DescriptionBegin
+# If you like the DS font, just include this package. It should be compatible with any other package.
+# It defines \mathbb to be \mathds and maps the original \mathbb to \mathbbOld
+#DescriptionEnd
+#
+#Author: Quirin F. Schroll  aka.  Bolpat
+
+Format 60
+
+AddToPreamble
+    \usepackage{dsfont}
+    \newcommand{\mathbbOld}{\mathbb}
+    \renewcommand{\mathbb}{\mathds}
+EndPreamble

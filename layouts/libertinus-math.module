@@ -1,0 +1,26 @@
+#\DeclareLyXModule{Libertinus T1 Math}
+#DescriptionBegin
+# Makes libertinust1math possible. Uses dutchcal for mathcal and boondoxo for mathscr.
+#
+# DO NOT USE TOGETHER WITH MATH NON-DEFAULT FONTS
+#DescriptionEnd
+#
+#Author: Quirin F. Schroll  alias  Bolpat
+
+Format 60
+
+AddToPreamble
+    \usepackage[slantedGreek,upint]{libertinust1math}
+    \usepackage[cal=dutchcal,scr=boondoxo]{mathalfa} %,frak=euler
+    \usepackage{ifthen}
+    
+    % Redefine \mathbb{N} to \mathbb{N}\! because of odd space after IN
+    \let\Mathbb\mathbb
+    \renewcommand{\mathbb}[1]{\ifthenelse{\equal{#1}{N}}{\Mathbb{N}\!}{\Mathbb{#1}}}
+    
+    % TODO: Fix \boldsymbol{T}, missing Glyphs
+    
+    % correct space between integrals
+    \renewcommand\idotsint{\operatorname{\int\hspace{-0.2em}\cdots\int}}
+    \newcommand\dotsint{\operatorname{\int\hspace{-0.2em}\cdots\int}}
+EndPreamble

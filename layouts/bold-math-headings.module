@@ -1,0 +1,13 @@
+#\DeclareLyXModule{Bold Math Headings}
+#DescriptionBegin
+# Makes formulas in headings bold.
+#DescriptionEnd
+#
+#Author: Quirin F. Schroll  aka.  Bolpat
+
+Format 60
+
+AddToPreamble
+    \makeatletter
+    \g@addto@macro\bfseries{\boldmath}
+EndPreamble

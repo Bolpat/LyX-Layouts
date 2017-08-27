@@ -47,6 +47,9 @@ End
 Style Theorem*
 End
 
+Style "Named Theorem"
+End
+
 Style Example
 End
 

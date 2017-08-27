@@ -61,10 +61,10 @@ Style Case
   Preamble
     \newlist{casenv}{enumerate}{4}
     \setlist[casenv]{leftmargin=*,align=left,widest={iiii}}
-    \setlist[casenv,1]{label={{\itshape\ \casename} \arabic*.},ref=\arabic*}
-    \setlist[casenv,2]{label={{\itshape\ \casename} \roman*.},ref=\roman*}
-    \setlist[casenv,3]{label={{\itshape\ \casename\ \alph*.}},ref=\alph*}
-    \setlist[casenv,4]{label={{\itshape\ \casename} \arabic*.},ref=\arabic*}
+    \setlist[casenv,1]{label={{\upshape\ \casename} \arabic*.},ref=\arabic*}
+    \setlist[casenv,2]{label={{\upshape\ \casename} \roman*.},ref=\roman*}
+    \setlist[casenv,3]{label={{\upshape\ \casename\ \alph*.}},ref=\alph*}
+    \setlist[casenv,4]{label={{\upshape\ \casename} \arabic*.},ref=\arabic*}
   EndPreamble
   LangPreamble
     \providecommand{\casename}{_(Case)}

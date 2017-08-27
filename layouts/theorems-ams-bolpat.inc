@@ -55,9 +55,12 @@ Style Theorem
 	  Series              Up
 	EndFont
 	Preamble
+		\newdimen\aftersep
+		\aftersep=\topsep
+		\advance\aftersep by -\parskip
 		\newtheoremstyle{scthm}
 			{\topsep}
-			{\topsep}
+			{\aftersep}
 			{\normalfont}
 			{0pt}
 			{\normalfont}

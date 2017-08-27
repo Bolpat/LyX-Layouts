@@ -57,9 +57,12 @@ Style Theorem*
 	  Series              Up
 	EndFont
 	Preamble
+	  \newdimen\aftersepp
+	  \aftersepp=\topsep
+	  \advance\aftersepp by -\parskip
 	  \newtheoremstyle{scthm*}
 	    {\topsep}                                               % ABOVESPACE
-	    {\topsep}                                               % BELOWSPACE
+	    {\aftersepp}                                            % BELOWSPACE
 	    {\normalfont}                                           % BODYFONT
 	    {0pt}                                                   % INDENT (empty value is the same as 0pt)
 	    {\normalfont}                                           % HEADFONT (don't use \scshape here)
@@ -76,6 +79,26 @@ Style Theorem*
 	  \addto\captions$$lang{\renewcommand{\theoremname}{_(Theorem)}}
 	EndBabelPreamble
 	Requires              amsthm
+End
+
+
+Style "Named Theorem"
+	CopyStyle             Theorem*
+	DependsOn             Theorem*
+	LabelString           "Named Theorem:"
+	LatexName             namedthm
+	Preamble
+	  \newcommand\thmsname{\protect\theoremname}
+	  \newcommand\nm@thmtype{theorem}
+	  \theoremstyle{scthm*}
+	  \newtheorem*{namedtheorem}{\thmsname}
+	  \newenvironment{namedthm}[1][Undefined Theorem Name]{
+	    \ifx{#1}{Undefined Theorem Name}\renewcommand\nm@thmtype{theorem*}
+	    \else\renewcommand\thmsname{#1}\renewcommand\nm@thmtype{namedtheorem}
+	    \fi
+	    \begin{\nm@thmtype}}
+	    {\end{\nm@thmtype}}
+	EndPreamble
 End
 
 

@@ -38,7 +38,67 @@ Style Proof
 	  Size                Normal
 	EndFont
 	LabelFont
-	  Shape               Italic
+	  Shape               Up
 	EndFont
+    Preamble
+        %\makeatletter
+        \renewenvironment{proof}[1][\proofname]{\par
+            %\vspace{-0.3\topsep}% remove the space after the theorem
+            \vspace{-\parskip}
+            \pushQED{\qed}%
+            \normalfont
+            \topsep0pt \partopsep0pt % no space before
+            \trivlist
+            \item[\hskip\labelsep
+            %  #1\@addpunct{.}\hskip 1em]\ignorespaces
+                #1.\hskip 0.5em plus 1pt minus 1pt]\ignorespaces
+        }{%
+            \popQED\endtrivlist\@endpefalse
+            %\addvspace{6pt plus 6pt} % some space after
+            \addvspace{6pt plus 2pt} % some space after
+        }
+        %\makeatother
+    EndPreamble
+	#Preamble
+	#	%\expandafter\let\expandafter\oldproof\csname\string\proof\endcsname
+	#	%\let\oldendproof\endproof
+	#	%\renewenvironment{proof}[1][\proofname]{%
+	#	%  \vspace{-1.0\topsep}% remove space before the proof
+	#	%  \oldproof[\upshape #1]% \scshape
+    #    %   \vspace{\parskip}% remove space after the proof
+	#	%}{\oldendproof}
+    #    
+    #    %\makeatletter
+    #    %\renewenvironment{proof}[1][\proofname]{\par
+    #    %    %\vspace{-0.3\topsep}% remove the space after the theorem
+    #    %    \vspace{-\parskip}
+    #    %    \pushQED{\qed}%
+    #    %    \normalfont
+    #    %    \topsep0pt \partopsep0pt % no space before
+    #    %    \trivlist
+    #    %    \item[\hskip\labelsep
+    #    %    %  #1\@addpunct{.}\hskip 1em]\ignorespaces
+    #    %        #1.\hskip 0.5em plus 1pt minus 1pt]\ignorespaces
+    #    %}{%
+    #    %    \popQED\endtrivlist\@endpefalse
+    #    %    \addvspace{6pt plus 6pt} % some space after
+    #    %}
+    #    %\makeatother
+    #    
+    #    \makeatletter
+    #    \renewenvironment{proof}[1][\proofname]{\par
+    #      \vspace{-\topsep}% remove the space after the theorem
+    #      \pushQED{\qed}%
+    #      \normalfont
+    #      \topsep0pt \partopsep0pt % no space before
+    #      \trivlist
+    #      \item[\hskip\labelsep
+    #        #1\@addpunct{.}]\ignorespaces
+    #    }{%
+    #      \popQED\endtrivlist\@endpefalse
+    #      \addvspace{6pt plus 6pt} % some space after
+    #    }
+    #    \makeatother
+	#EndPreamble
 End
 
