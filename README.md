@@ -1,3 +1,3 @@
 # LyX Mods
 
-Copy the files into the respective LyX user directory.
+Copy the folders into the respective LyX user directory.
